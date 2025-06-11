@@ -41,7 +41,7 @@ A modular architecture ensures smooth, real-time operation:
 ### Installation & Setup
 
 ```powershell
-git clone https://github.com/yourusername/Neuroprosthetics.git
+git clone https://github.com/Mixnikon108/Neuroprosthetics.git
 cd Neuroprosthetics
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
