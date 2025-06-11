@@ -1,0 +1,35 @@
+# Parámetros de la aplicación ──────────────────────────────────────────────
+model:
+  path: "models/mi_modelo.csp.mi.mdl"     # Ruta al modelo guardado
+
+# Tamaños de las colas usadas en multiprocessing / threading
+queue:
+  maxsize: 32                               # Inference input‑queue (ventanas)
+
+# Ajustes globales de TensorFlow
+tensorflow:
+  log_level: 2                              # 0 = TODOS los logs · 2 = solo ERROR
+  disable_onednn: true                      # true → desactiva oneDNN (menos “ruido”)
+
+# BACKEND ───────────────────────────────────────────────────────────────────
+backend:
+  poll_interval: 0.01       # Segundos que duerme el bucle cuando está inactivo
+  max_drop_warn: 100        # Ventanas/chunks perdidos antes de avisar a la GUI
+  min_cmd_interval: 8       # Mínimo entre comandos al Arduino (20 Hz máx.)
+  stability_required: 3     # Nº de predicciones idénticas antes de enviar cmd
+
+# Parámetros del flujo LSL (EEG)
+lsl:
+  pull_chunk_size: 64       # Muestras que se piden a la vez a la librería LSL
+  max_queue_samples: 40     # Chunks que se guardan como máximo en la cola
+  timeout: 2                # Timeout (s) de `StreamInlet.pull_chunk`
+
+# Sliding‑window que crea las ventanas de inferencia
+sliding_window:
+  win_len: 256              # Muestras por ventana   (≈1 s @ 256 Hz)
+  hop_len: 128              # Solape del 50 %
+  max_buffer_s: 10          # Historial circular en segundos
+
+# Puerto serie / Arduino
+arduino:
+  default_baudrate: 115200  # Valor por defecto si no se indica en CLI

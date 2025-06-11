@@ -1,0 +1,49 @@
+/* style.qss – tema oscuro minimalista para PySide6 */
+
+/* ----------- Ventana principal ----------- */
+QMainWindow {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* ----------- Barra de estado ------------ */
+QStatusBar {
+    background-color: #252526;
+    color: #d4d4d4;
+    padding: 4px;
+}
+
+/* ----------- GroupBoxes ----------------- */
+QGroupBox {
+    border: 1px solid #3c3c3c;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    padding: 0 3px 0 3px;
+}
+
+/* ----------- ListWidget ----------------- */
+QListWidget,
+QListView {
+    background-color: #252526;
+    border: 1px solid #3c3c3c;
+    color: #e0e0e0;
+}
+
+/* ----------- ScrollBars ----------------- */
+QScrollBar:vertical {
+    background: #2d2d30;
+    width: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #5a5a5a;
+    min-height: 20px;
+    border-radius: 4px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
